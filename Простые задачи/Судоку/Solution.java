@@ -17,7 +17,7 @@ class Solution {
         return true;
     }
 
-    public boolean isValidColumn(char[][] board, int i) {
+    private boolean isValidColumn(char[][] board, int i) {
         Set<Character> numbers = new HashSet<>();
         for (int j = 0; j < 9; j++) {
             if (numbers.contains(board[i][j])) {
@@ -29,7 +29,7 @@ class Solution {
         return true;
     }
 
-    public boolean isValidRow(char[][] board, int j) {
+    private boolean isValidRow(char[][] board, int j) {
         Set<Character> numbers = new HashSet<>();
         for (int i = 0; i < 9; i++) {
             if (numbers.contains(board[i][j])) {
@@ -41,7 +41,7 @@ class Solution {
         return true;
     }
 
-    public boolean isValidSquare(char[][] board, int p, int q) {
+    private boolean isValidSquare(char[][] board, int p, int q) {
         Set<Character> numbers = new HashSet<>();
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
