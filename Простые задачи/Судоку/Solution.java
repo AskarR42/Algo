@@ -14,13 +14,6 @@ class Solution {
                 return false;
             }
         }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (!isValidSquare(board, 3 * i + 1, 3 * j + 1)) {
-                    return false;
-                }
-            }
-        }
         return true;
     }
 
