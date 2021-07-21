@@ -1,5 +1,5 @@
 class Solution {
-    public static int[][] generateMatrix(int n) {
+    public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
         int counter = 1;
         for (int boarder = 0; boarder < (n + 1) / 2; boarder++) {
