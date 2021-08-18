@@ -1,0 +1,27 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class SubsetGenerator {
+
+    int n;
+    Deque<Integer> subset;
+
+    SubsetGenerator(int n) {
+        this.n = n;
+        subset = new ArrayDeque<>();
+    }
+
+    public void generateSubsets(int k) {
+        if (k == n + 1) {
+            for (int elem : subset) {
+                System.out.print(elem + " ");
+            }
+            System.out.println();
+        } else {
+            subset.addLast(k);
+            generateSubsets(k + 1);
+            subset.removeLast();
+            generateSubsets(k + 1);
+        }
+    }
+}
