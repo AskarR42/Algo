@@ -1,0 +1,35 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class PermutationGenerator {
+
+    private int n;
+    private Deque<Integer> permutation;
+    private boolean[] chosen;
+
+    PermutationGenerator(int n) {
+        this.n = n;
+        permutation = new ArrayDeque<>();
+        chosen = new boolean[n + 1];
+    }
+
+    public void generatePermutations() {
+        if (permutation.size() == n) {
+            for (int elem : permutation) {
+                System.out.print(elem + " ");
+            }
+            System.out.println();
+        } else {
+            for (int i = 1; i <= n; i++) {
+                if (chosen[i]) {
+                    continue;
+                }
+                chosen[i] = true;
+                permutation.addLast(i);
+                generatePermutations();
+                chosen[i] = false;
+                permutation.removeLast();
+            }
+        }
+    }
+}
