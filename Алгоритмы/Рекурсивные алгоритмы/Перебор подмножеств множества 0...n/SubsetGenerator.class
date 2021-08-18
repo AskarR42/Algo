@@ -3,8 +3,8 @@ import java.util.Deque;
 
 public class SubsetGenerator {
 
-    int n;
-    Deque<Integer> subset;
+    private int n;
+    private Deque<Integer> subset;
 
     SubsetGenerator(int n) {
         this.n = n;
@@ -13,10 +13,7 @@ public class SubsetGenerator {
 
     public void generateSubsets(int k) {
         if (k == n + 1) {
-            for (int elem : subset) {
-                System.out.print(elem + " ");
-            }
-            System.out.println();
+            //обработать подмножество
         } else {
             subset.addLast(k);
             generateSubsets(k + 1);
